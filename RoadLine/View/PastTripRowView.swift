@@ -9,26 +9,25 @@ import SwiftUI
 
 struct PastTripRowView: View {
     var body: some View {
-        HStack(alignment: .center, spacing: 15) {
+        HStack(alignment: .center, spacing: 14) {
             Circle()
-                .frame(width: 75, height: 75)
+                .frame(width: 60, height: 60)
                 .shadow(radius: 10)
             
             VStack(alignment: .leading, spacing: 3) {
                 Text("일본 오사카")
-                    .font(.title3)
+                    .font(.headline)
                 Text("2024.10.12 - 2024.10.15")
-                    .font(.subheadline)
+                    .font(.caption)
                     .foregroundColor(.gray)
                 Text("엄마랑 언니랑 여행")
-                    .font(.subheadline)
+                    .font(.caption2)
                     .foregroundColor(.gray)
             }
             Spacer()
             Image(systemName: "chevron.right")
         }
-        .frame(height: 100)
-        // .padding(.horizontal, 24) // 외부에서 선언
+        .frame(height: 80)
     }
 }
 

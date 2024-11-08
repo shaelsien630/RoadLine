@@ -15,7 +15,7 @@ struct PastTripView: View {
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-            ForEach(0..<4, id: \.self) { _ in
+            ForEach(0..<8, id: \.self) { _ in
                 PastTripRowView()
             }
         }

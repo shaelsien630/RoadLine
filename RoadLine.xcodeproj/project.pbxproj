@@ -16,6 +16,9 @@
 		61446F8B2CDC7EA80047ADCD /* PastTripRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F8A2CDC7EA80047ADCD /* PastTripRowView.swift */; };
 		61446F8D2CDC87C50047ADCD /* CommingTirpRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F8C2CDC87C50047ADCD /* CommingTirpRowView.swift */; };
 		61446F8F2CDC8C230047ADCD /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F8E2CDC8C230047ADCD /* TitleView.swift */; };
+		61446F912CDDBBE70047ADCD /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F902CDDBBE70047ADCD /* TravelModel.swift */; };
+		61446F932CDDBDED0047ADCD /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F922CDDBDED0047ADCD /* AddTripView.swift */; };
+		61446F992CDDCC630047ADCD /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F982CDDCC630047ADCD /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		61446F8A2CDC7EA80047ADCD /* PastTripRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTripRowView.swift; sourceTree = "<group>"; };
 		61446F8C2CDC87C50047ADCD /* CommingTirpRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommingTirpRowView.swift; sourceTree = "<group>"; };
 		61446F8E2CDC8C230047ADCD /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		61446F902CDDBBE70047ADCD /* TravelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
+		61446F922CDDBDED0047ADCD /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
+		61446F982CDDCC630047ADCD /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		61FC77EB2CD9FB5B00A2FADD /* RoadLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -46,6 +52,7 @@
 		61446F762CDC78340047ADCD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				61446F902CDDBBE70047ADCD /* TravelModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -63,6 +70,8 @@
 			children = (
 				61446F7A2CDC78340047ADCD /* MainView.swift */,
 				61446F8E2CDC8C230047ADCD /* TitleView.swift */,
+				61446F922CDDBDED0047ADCD /* AddTripView.swift */,
+				61446F982CDDCC630047ADCD /* CalendarView.swift */,
 				61446F792CDC78340047ADCD /* CommingTripView.swift */,
 				61446F8C2CDC87C50047ADCD /* CommingTirpRowView.swift */,
 				61446F7B2CDC78340047ADCD /* PastTripView.swift */,
@@ -183,7 +192,10 @@
 			files = (
 				61446F842CDC78340047ADCD /* CommingTripView.swift in Sources */,
 				61446F852CDC78340047ADCD /* MainView.swift in Sources */,
+				61446F932CDDBDED0047ADCD /* AddTripView.swift in Sources */,
 				61446F8B2CDC7EA80047ADCD /* PastTripRowView.swift in Sources */,
+				61446F912CDDBBE70047ADCD /* TravelModel.swift in Sources */,
+				61446F992CDDCC630047ADCD /* CalendarView.swift in Sources */,
 				61446F8F2CDC8C230047ADCD /* TitleView.swift in Sources */,
 				61446F8D2CDC87C50047ADCD /* CommingTirpRowView.swift in Sources */,
 				61446F862CDC78340047ADCD /* PastTripView.swift in Sources */,
