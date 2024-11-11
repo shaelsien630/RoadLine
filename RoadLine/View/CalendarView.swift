@@ -26,7 +26,7 @@ struct CalendarView: View {
                 Text(monthAndYear(for: displayedMonth))
                     .font(.headline)
                     .padding(.horizontal)
-                    .foregroundStyle(Color.black)
+                    .foregroundStyle(Color.primary)
 
                 Button(action: {
                     changeMonth(by: 1)
@@ -49,7 +49,7 @@ struct CalendarView: View {
                             .font(.subheadline)
                             .bold()
                             .frame(maxWidth: .infinity)
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(Color.primary)
                     }
                 }
 
@@ -166,3 +166,4 @@ struct CalendarView: View {
 #Preview {
     CalendarView(startDate: .constant(Date()), endDate: .constant(Date()))
 }
+

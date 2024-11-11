@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TitleView: View {
+    @EnvironmentObject var travelViewModel: TravelViewModel
     @State var showSheet: Bool = false
     
     var body: some View {

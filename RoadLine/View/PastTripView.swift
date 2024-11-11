@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct PastTripView: View {
+    @EnvironmentObject var travelViewModel: TravelViewModel
+    
     var body: some View {
         VStack {
             Text("지난 여행")
                 .font(.title2)
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
-                
-            ForEach(0..<8, id: \.self) { _ in
-                PastTripRowView()
+            
+            ForEach(travelViewModel.pastTravels, id: \.self) { travelID in
+                NavigationLink {
+                    TravelPlanView(travelID: travelID)
+                } label: {
+                    PastTripRowView(travelID: travelID)
+                }
             }
         }
         .padding(.horizontal, 24)
@@ -26,4 +32,5 @@ struct PastTripView: View {
 
 #Preview {
     PastTripView()
+        .environmentObject(TravelViewModel())
 }

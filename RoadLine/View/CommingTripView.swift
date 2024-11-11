@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CommingTripView: View {
+    @EnvironmentObject var travelViewModel: TravelViewModel
+    
     var body: some View {
         VStack(spacing: 15) {
             Text("다가오는 여행")
@@ -15,8 +17,13 @@ struct CommingTripView: View {
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            ForEach(0..<1, id: \.self) { _ in
-                CommingTirpRowView()
+            ForEach(travelViewModel.commingTravels, id: \.self) { travelID in
+                NavigationLink {
+                    TravelPlanView(travelID: travelID)
+                } label: {
+                    CommingTirpRowView(travelID: travelID)
+                }
+
             }
         }
         .padding(.horizontal, 24)
@@ -27,4 +34,5 @@ struct CommingTripView: View {
 
 #Preview {
     CommingTripView()
+        .environmentObject(TravelViewModel())
 }

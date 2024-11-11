@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CommingTirpRowView: View {
+    @EnvironmentObject var travelViewModel: TravelViewModel
+    let travelID: String
+    
     var body: some View {
         RoundedRectangle(cornerRadius: 12)
             .fill(Color.black.opacity(0.8))
@@ -15,10 +18,13 @@ struct CommingTirpRowView: View {
             .frame(width: .infinity, height: 160)
             .overlay(
                 VStack(spacing: 6) {
-                    Text("태국 푸켓")
-                        .font(.title2)
-                        .bold()
-                    Text("2024.10.12 - 2024.10.15")
+                    HStack(spacing: 6) {
+                        Text(travelViewModel.getTravel(by: travelID)?.country ?? "")
+                            .font(.title2)
+                            .bold()
+                    }
+                    
+                    Text("\(travelViewModel.getTravel(by: travelID)?.departureDate.dateToString(format: .yyyyMMddDot) ?? "") - \(travelViewModel.getTravel(by: travelID)?.returnDate.dateToString(format: .yyyyMMddDot) ?? "")")
                         .font(.subheadline)
                 }
                 .foregroundStyle(.white)
@@ -27,5 +33,6 @@ struct CommingTirpRowView: View {
 }
 
 #Preview {
-    CommingTirpRowView()
+    CommingTirpRowView(travelID: "0")
+        .environmentObject(TravelViewModel())
 }

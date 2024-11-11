@@ -8,25 +8,17 @@
 import SwiftUI
 
 struct AddTripView: View {
-    @Environment(\.dismiss) var dismiss // sheet를 닫기 위한 dismiss 환경 변수
+    @EnvironmentObject var travelViewModel: TravelViewModel
+    @Environment(\.dismiss) var dismiss
     
-    // struct Travel: Codable {
-    //     let country: String                 // 여행 국가
-    //     let cities: [String]                // 여행 도시 배열
-    //     let departureDate: Date             // 출발 날짜
-    //     let returnDate: Date                // 귀국 날짜
-    //     let notes: String                   // 메모
-    //     let currency: String                // 통화
+    @State private var showAlertCountry: Bool = false
+    @State private var showAlertDate: Bool = false
+    @State private var showAlertNotes: Bool = false
     
     @State private var country: String = ""
     @State private var startDate: Date? = nil
     @State private var endDate: Date? = nil
     @State private var notes: String = ""
-    private let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "d"
-        return formatter
-    }()
     
     var body: some View {
         NavigationView {
@@ -40,7 +32,7 @@ struct AddTripView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .foregroundStyle(Color.primary)
                         
-                        TextField("여행 국가", text: $country) // 일정 이름 입력
+                        TextField("일본 도쿄", text: $country)
                             .frame(height: 44)
                             .multilineTextAlignment(.leading)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -60,7 +52,7 @@ struct AddTripView: View {
                         CalendarView(startDate: $startDate, endDate: $endDate)
                         
                         if let startDate = startDate, let endDate = endDate {
-                            Text("\(formattedDate(startDate))   -   \(formattedDate(endDate))")
+                            Text("\(startDate.dateToString(format: .yyyyMMdd))   -   \(endDate.dateToString(format: .yyyyMMdd))")
                                 .frame(width: 340, height: 40)
                                 .background(Color.accentColor)
                                 .cornerRadius(20)
@@ -96,8 +88,33 @@ struct AddTripView: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("저장") {
-                        // 저장 작업 수행
-                        dismiss()
+                        if country.isEmpty {
+                            showAlertCountry = true
+                        } else if notes.isEmpty  {
+                            showAlertNotes = true
+                        } else {
+                                if let startDate = startDate,
+                                   let endDate = endDate {
+                                    travelViewModel.addTravel(
+                                        country: country,
+                                        departureDate: startDate,
+                                        returnDate: endDate,
+                                        notes: notes
+                                    )
+                                    dismiss()
+                                } else {
+                                    showAlertDate = true
+                                }
+                        }
+                    }
+                    .alert("여행 장소를 입력해주세요", isPresented: $showAlertCountry) {
+                        Button("확인", role: .cancel) { }
+                    }
+                    .alert("여행 날짜를 선택해주세요", isPresented: $showAlertDate) {
+                        Button("확인", role: .cancel) { }
+                    }
+                    .alert("여행 메모를 입력해주세요", isPresented: $showAlertNotes) {
+                        Button("확인", role: .cancel) { }
                     }
                     .foregroundStyle(Color.accentColor)
                 }
@@ -109,13 +126,6 @@ struct AddTripView: View {
                 }
             }
         }
-    }
-    
-    private func formattedDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.dateFormat = "yyyy년 MM월 dd일"
-        return formatter.string(from: date)
     }
 }
 

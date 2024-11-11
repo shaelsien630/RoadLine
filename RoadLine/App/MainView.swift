@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var travelViewModel = TravelViewModel()
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
                 TitleView()
-                ScrollView(.vertical) {
+                ScrollView(.vertical, showsIndicators: false) {
                     CommingTripView()
                     PastTripView()
                 }
             }
             .ignoresSafeArea(edges: .bottom)
+            .environmentObject(travelViewModel)
         }
     }
 }

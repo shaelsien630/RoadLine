@@ -19,6 +19,9 @@
 		61446F912CDDBBE70047ADCD /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F902CDDBBE70047ADCD /* TravelModel.swift */; };
 		61446F932CDDBDED0047ADCD /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F922CDDBDED0047ADCD /* AddTripView.swift */; };
 		61446F992CDDCC630047ADCD /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F982CDDCC630047ADCD /* CalendarView.swift */; };
+		61446F9B2CE188840047ADCD /* TravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F9A2CE188840047ADCD /* TravelViewModel.swift */; };
+		61446F9E2CE192310047ADCD /* TravelPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F9D2CE192310047ADCD /* TravelPlanView.swift */; };
+		61446FA32CE19B8E0047ADCD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446FA22CE19B8E0047ADCD /* Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		61446F902CDDBBE70047ADCD /* TravelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 		61446F922CDDBDED0047ADCD /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
 		61446F982CDDCC630047ADCD /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		61446F9A2CE188840047ADCD /* TravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewModel.swift; sourceTree = "<group>"; };
+		61446F9D2CE192310047ADCD /* TravelPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlanView.swift; sourceTree = "<group>"; };
+		61446FA22CE19B8E0047ADCD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		61FC77EB2CD9FB5B00A2FADD /* RoadLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -68,7 +74,6 @@
 		61446F7C2CDC78340047ADCD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				61446F7A2CDC78340047ADCD /* MainView.swift */,
 				61446F8E2CDC8C230047ADCD /* TitleView.swift */,
 				61446F922CDDBDED0047ADCD /* AddTripView.swift */,
 				61446F982CDDCC630047ADCD /* CalendarView.swift */,
@@ -76,6 +81,7 @@
 				61446F8C2CDC87C50047ADCD /* CommingTirpRowView.swift */,
 				61446F7B2CDC78340047ADCD /* PastTripView.swift */,
 				61446F8A2CDC7EA80047ADCD /* PastTripRowView.swift */,
+				61446F9D2CE192310047ADCD /* TravelPlanView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -83,6 +89,7 @@
 		61446F7D2CDC78340047ADCD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				61446F9A2CE188840047ADCD /* TravelViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -90,15 +97,33 @@
 		61446F812CDC78340047ADCD /* RoadLine */ = {
 			isa = PBXGroup;
 			children = (
+				61446F9C2CE18DB70047ADCD /* App */,
 				61446F762CDC78340047ADCD /* Model */,
 				61446F7D2CDC78340047ADCD /* ViewModel */,
 				61446F7C2CDC78340047ADCD /* View */,
+				61446F9F2CE19B410047ADCD /* Extentions */,
 				61446F782CDC78340047ADCD /* Preview Content */,
 				61446F7E2CDC78340047ADCD /* Assets.xcassets */,
 				61446F7F2CDC78340047ADCD /* RoadLine.entitlements */,
-				61446F802CDC78340047ADCD /* RoadLineApp.swift */,
 			);
 			path = RoadLine;
+			sourceTree = "<group>";
+		};
+		61446F9C2CE18DB70047ADCD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				61446F802CDC78340047ADCD /* RoadLineApp.swift */,
+				61446F7A2CDC78340047ADCD /* MainView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		61446F9F2CE19B410047ADCD /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				61446FA22CE19B8E0047ADCD /* Formatter.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 		61FC77E22CD9FB5B00A2FADD = {
@@ -190,6 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61446F9B2CE188840047ADCD /* TravelViewModel.swift in Sources */,
+				61446FA32CE19B8E0047ADCD /* Formatter.swift in Sources */,
 				61446F842CDC78340047ADCD /* CommingTripView.swift in Sources */,
 				61446F852CDC78340047ADCD /* MainView.swift in Sources */,
 				61446F932CDDBDED0047ADCD /* AddTripView.swift in Sources */,
@@ -200,6 +227,7 @@
 				61446F8D2CDC87C50047ADCD /* CommingTirpRowView.swift in Sources */,
 				61446F862CDC78340047ADCD /* PastTripView.swift in Sources */,
 				61446F872CDC78340047ADCD /* RoadLineApp.swift in Sources */,
+				61446F9E2CE192310047ADCD /* TravelPlanView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
