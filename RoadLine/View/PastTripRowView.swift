@@ -59,7 +59,7 @@ struct PastTripRowView: View {
                 }
             }
             .padding(.horizontal, 12)
-            .background(Color.white)
+            .background(Color.darkPrimary)
             .offset(x: offsetX)
             .highPriorityGesture(
                 DragGesture()

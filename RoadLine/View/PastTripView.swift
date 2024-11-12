@@ -10,11 +10,6 @@ import RealmSwift
 
 struct PastTripView: View {
     @EnvironmentObject var travelViewModel: TravelViewModel
-    @ObservedResults(
-        Travel.self,
-        filter: NSPredicate(format: "isComming == false"),
-        sortDescriptor: SortDescriptor(keyPath: "returnDate", ascending: false)
-    ) var pastTravels
     
     @State private var offset: CGFloat = 0
     @GestureState private var isDragging = false
@@ -28,10 +23,11 @@ struct PastTripView: View {
                 .padding(.horizontal, 24)
             
             LazyVStack {
-                ForEach(pastTravels, id: \.id) { travel in
+                ForEach(travelViewModel.pastTravels, id: \.id) { travel in
                     PastTripRowView(travelID: travel.id, onDelete: {
                         withAnimation(.easeInOut) {
-                            travelViewModel.removeTravel(by: travel.id)
+                            travelViewModel.deleteTravel(by: travel.id)
+                            travelViewModel.fetchItems()
                         }
                     })
                     .transition(.move(edge: .leading))

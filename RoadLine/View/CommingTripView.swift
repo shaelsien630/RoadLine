@@ -10,24 +10,19 @@ import RealmSwift
 
 struct CommingTripView: View {
     @EnvironmentObject var travelViewModel: TravelViewModel
-    @ObservedResults(
-        Travel.self,
-        filter: NSPredicate(format: "isComming == true"),
-        sortDescriptor: SortDescriptor(keyPath: "returnDate", ascending: false)
-    ) var commingTravels
     
     var body: some View {
-        VStack(spacing: 15) {
+        VStack(spacing: 20) {
             Text("다가오는 여행")
                 .font(.title2)
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             LazyVStack {
-                ForEach(commingTravels, id: \.id) { travel in
+                ForEach(travelViewModel.comingTravels, id: \.id) { travel in
                     CommingTirpRowView(travelID: travel.id, onDelete: {
                         withAnimation(.easeInOut) {
-                            travelViewModel.removeTravel(by: travel.id)
+                            travelViewModel.deleteTravel(by: travel.id)
                         }
                     })
                 }

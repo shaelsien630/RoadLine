@@ -16,7 +16,6 @@ class Travel: Object, Identifiable {
     @Persisted var returnDate: Date = Date()
     @Persisted var notes: String = ""
     @Persisted var currency: String = ""
-    @Persisted var isComming: Bool = false
     // @objc dynamic var schedules: [Schedule]
     // @objc dynamic var expenses: [Expense]
 }

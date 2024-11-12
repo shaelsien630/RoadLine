@@ -18,7 +18,7 @@ struct CommingTirpRowView: View {
         HStack {
             NavigationLink(destination: TravelPlanView(travelID: travelID)) {
                 RoundedRectangle(cornerRadius: 12)
-                    .fill(Color.black.opacity(0.8))
+                    .fill(Color.primary)
                     .shadow(radius: 10)
                     .frame(width: .infinity, height: 160)
                     .overlay(
@@ -30,7 +30,7 @@ struct CommingTirpRowView: View {
                             Text("\(travelViewModel.getTravel(by: travelID)?.departureDate.dateToString(format: .yyyyMMddDot) ?? "") - \(travelViewModel.getTravel(by: travelID)?.returnDate.dateToString(format: .yyyyMMddDot) ?? "")")
                                 .font(.subheadline)
                         }
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.darkPrimary)
                     )
                     .onLongPressGesture {
                         showAlert = true
