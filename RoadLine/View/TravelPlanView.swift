@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct TravelPlanView: View {
-    let travelID: String
+    let travelID: ObjectId
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("\(travelID)")
     }
 }
 
-#Preview {
-    TravelPlanView(travelID: "0")
-}
+// #Preview {
+//     TravelPlanView(travelID: "0")
+// }

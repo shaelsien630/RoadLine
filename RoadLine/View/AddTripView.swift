@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct AddTripView: View {
-    @EnvironmentObject var travelViewModel: TravelViewModel
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var travelViewModel: TravelViewModel
+    @FocusState private var isFocused: Bool
     
     @State private var showAlertCountry: Bool = false
     @State private var showAlertDate: Bool = false
@@ -33,6 +34,7 @@ struct AddTripView: View {
                             .foregroundStyle(Color.primary)
                         
                         TextField("일본 도쿄", text: $country)
+                            .focused($isFocused)
                             .frame(height: 44)
                             .multilineTextAlignment(.leading)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -71,6 +73,7 @@ struct AddTripView: View {
                             .foregroundStyle(Color.primary)
                         
                         TextField("엄마와 떠나는 가을 여행", text: $notes) // 일정 이름 입력
+                            .focused($isFocused)
                             .frame(height: 44)
                             .multilineTextAlignment(.leading)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -93,18 +96,18 @@ struct AddTripView: View {
                         } else if notes.isEmpty  {
                             showAlertNotes = true
                         } else {
-                                if let startDate = startDate,
-                                   let endDate = endDate {
-                                    travelViewModel.addTravel(
-                                        country: country,
-                                        departureDate: startDate,
-                                        returnDate: endDate,
-                                        notes: notes
-                                    )
-                                    dismiss()
-                                } else {
-                                    showAlertDate = true
-                                }
+                            if let startDate = startDate,
+                               let endDate = endDate {
+                                travelViewModel.addTravel(
+                                    country: country,
+                                    departureDate: startDate,
+                                    returnDate: endDate,
+                                    notes: notes
+                                )
+                                dismiss()
+                            } else {
+                                showAlertDate = true
+                            }
                         }
                     }
                     .alert("여행 장소를 입력해주세요", isPresented: $showAlertCountry) {
@@ -126,6 +129,12 @@ struct AddTripView: View {
                 }
             }
         }
+        .contentShape(Rectangle())
+        .simultaneousGesture(
+            TapGesture().onEnded {
+                isFocused = false
+            }
+        )
     }
 }
 

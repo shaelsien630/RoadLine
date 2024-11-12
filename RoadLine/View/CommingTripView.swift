@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct CommingTripView: View {
     @EnvironmentObject var travelViewModel: TravelViewModel
+    @ObservedResults(
+        Travel.self,
+        filter: NSPredicate(format: "isComming == true"),
+        sortDescriptor: SortDescriptor(keyPath: "returnDate", ascending: false)
+    ) var commingTravels
     
     var body: some View {
         VStack(spacing: 15) {
@@ -17,13 +23,14 @@ struct CommingTripView: View {
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            ForEach(travelViewModel.commingTravels, id: \.self) { travelID in
-                NavigationLink {
-                    TravelPlanView(travelID: travelID)
-                } label: {
-                    CommingTirpRowView(travelID: travelID)
+            LazyVStack {
+                ForEach(commingTravels, id: \.id) { travel in
+                    CommingTirpRowView(travelID: travel.id, onDelete: {
+                        withAnimation(.easeInOut) {
+                            travelViewModel.removeTravel(by: travel.id)
+                        }
+                    })
                 }
-
             }
         }
         .padding(.horizontal, 24)

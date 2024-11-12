@@ -22,7 +22,23 @@
 		61446F9B2CE188840047ADCD /* TravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F9A2CE188840047ADCD /* TravelViewModel.swift */; };
 		61446F9E2CE192310047ADCD /* TravelPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446F9D2CE192310047ADCD /* TravelPlanView.swift */; };
 		61446FA32CE19B8E0047ADCD /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446FA22CE19B8E0047ADCD /* Formatter.swift */; };
+		61446FA82CE300340047ADCD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 61446FA72CE300340047ADCD /* RealmSwift */; };
+		61446FA92CE3032D0047ADCD /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 61446FA72CE300340047ADCD /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		61446FAA2CE3032D0047ADCD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				61446FA92CE3032D0047ADCD /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		61446F772CDC78340047ADCD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -49,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61446FA82CE300340047ADCD /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +169,7 @@
 				61FC77E72CD9FB5B00A2FADD /* Sources */,
 				61FC77E82CD9FB5B00A2FADD /* Frameworks */,
 				61FC77E92CD9FB5B00A2FADD /* Resources */,
+				61446FAA2CE3032D0047ADCD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +177,7 @@
 			);
 			name = RoadLine;
 			packageProductDependencies = (
+				61446FA72CE300340047ADCD /* RealmSwift */,
 			);
 			productName = RoadLine;
 			productReference = 61FC77EB2CD9FB5B00A2FADD /* RoadLine.app */;
@@ -188,6 +207,9 @@
 			);
 			mainGroup = 61FC77E22CD9FB5B00A2FADD;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				61446FA42CE300340047ADCD /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 61FC77EC2CD9FB5B00A2FADD /* Products */;
 			projectDirPath = "";
@@ -448,6 +470,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		61446FA42CE300340047ADCD /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		61446FA72CE300340047ADCD /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61446FA42CE300340047ADCD /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 61FC77E32CD9FB5B00A2FADD /* Project object */;
 }
