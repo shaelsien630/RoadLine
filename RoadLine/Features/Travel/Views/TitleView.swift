@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct TitleView: View {
-    @EnvironmentObject var travelViewModel: TravelViewModel
-    @State var showSheet: Bool = false
+    let store: StoreOf<TravelFeature>
+    @State private var showSheet: Bool = false
     
     var body: some View {
         HStack {
             Button {
-                
+                // 왼쪽 메뉴 등의 액션 처리 가능 (필요 시 액션 전송)
             } label: {
                 Image(systemName: "line.3.horizontal")
                     .resizable()
@@ -27,7 +28,7 @@ struct TitleView: View {
                 .italic()
                 .frame(height: 60)
                 .frame(maxWidth: .infinity)
-                
+            
             Button {
                 showSheet.toggle()
             } label: {
@@ -35,17 +36,22 @@ struct TitleView: View {
                     .resizable()
                     .frame(width: 20, height: 20)
             }
-            .sheet(isPresented: $showSheet) { // sheet가 표시될 때
-                AddTripView() // 표시할 화면
+            .sheet(isPresented: $showSheet) {
+                // AddTravel에 store 전달
+                AddTravel(store: store)
             }
-            
         }
         .padding(.horizontal, 16)
-        .foregroundStyle(.white)
+        .foregroundColor(.white)
         .background(Color.accentColor)
     }
 }
 
 #Preview {
-    TitleView()
+    TitleView(
+        store: Store(
+            initialState: TravelFeature.State(),
+            reducer: { TravelFeature() }
+        )
+    )
 }

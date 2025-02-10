@@ -2,23 +2,33 @@
 //  TravelModel.swift
 //  RoadLine
 //
-//  Created by 최서희 on 11/8/24.
+//  Created by 최서희 on 2/10/25.
 //
 
 import Foundation
 import RealmSwift
 
-// Realm 모델
-class Travel: Object, Identifiable {
-    @Persisted(primaryKey: true) var id: ObjectId = ObjectId.generate()  // 고유 ID
+// Realm 모델 정의
+final class TravelObject: Object {
+    @Persisted(primaryKey: true) var _id: ObjectId = .generate()  // 고유 ID
     @Persisted var country: String = ""
     @Persisted var departureDate: Date = Date()
     @Persisted var returnDate: Date = Date()
     @Persisted var notes: String = ""
     @Persisted var currency: String = ""
-    // @objc dynamic var schedules: [Schedule]
-    // @objc dynamic var expenses: [Expense]
+    // 추가적으로 schedules, expenses 등 필요한 필드를 정의할 수 있습니다.
+
 }
+
+struct Travel: Identifiable, Equatable {
+    let id: ObjectId
+    let country: String
+    let departureDate: Date
+    let returnDate: Date
+    let notes: String
+    let currency: String
+}
+
 
 // // 여행 정보 구조체
 // struct Travel: Identifiable, Codable {
@@ -31,13 +41,13 @@ class Travel: Object, Identifiable {
 //     let schedules: [Schedule]           // 일정 배열
 //     let expenses: [Expense]             // 가계부 배열
 // }
-// 
+//
 // // 일정 정보 구조체
 // struct Schedule: Codable {
 //     let day: Int                        // 여행일 (첫째 날, 둘째 날 등)
 //     let locations: [Location]           // 장소 배열
 // }
-// 
+//
 // // 장소 정보 구조체
 // struct Location: Codable {
 //     let name: String                    // 장소명
@@ -45,7 +55,7 @@ class Travel: Object, Identifiable {
 //     let time: String                    // 방문 시간
 //     let notes: String                   // 메모
 // }
-// 
+//
 // // 가계부 정보 구조체
 // struct Expense: Codable {
 //     let date: Date                      // 날짜

@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct RoadLineApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(
+                store: Store(
+                    initialState: TravelFeature.State(),
+                    reducer: { TravelFeature() }
+                )
+            )
         }
     }
 }
