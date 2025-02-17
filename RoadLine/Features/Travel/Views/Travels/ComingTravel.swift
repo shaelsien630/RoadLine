@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct CommingTravel: View {
+struct ComingTravel: View {
     let store: StoreOf<TravelFeature>
     
     var body: some View {
@@ -22,7 +22,7 @@ struct CommingTravel: View {
                 LazyVStack {
                     ForEach(viewStore.state, id: \.id) { travel in
                         // 각 여행 행(row)에는 travel 데이터와 store를 전달합니다.
-                        CommingTravelRow(travel: travel, store: store)
+                        ComingTravelRow(travel: travel, store: store)
                     }
                 }
             }
@@ -34,7 +34,7 @@ struct CommingTravel: View {
 }
 
 #Preview {
-    CommingTravel(
+    ComingTravel(
         store: Store(
             initialState: TravelFeature.State(),
             reducer: { TravelFeature() }

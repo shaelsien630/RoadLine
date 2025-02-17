@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 import RealmSwift
 
-struct CommingTravelRow: View {
+struct ComingTravelRow: View {
     let travel: Travel
     let store: StoreOf<TravelFeature>
     @State private var showAlert = false

@@ -18,7 +18,7 @@ struct MainView: View {
                 TitleView(store: store)
                 ScrollView(.vertical, showsIndicators: false) {
                     // 다가오는 여행 및 지난 여행 뷰에 store 전달
-                    CommingTravel(store: store)
+                    ComingTravel(store: store)
                     PastTravel(store: store)
                 }
             }
