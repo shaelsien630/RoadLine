@@ -11,13 +11,12 @@ import ComposableArchitecture
 
 final class TravelRepository {
     private let realmManager = RealmManager()
-
-    // 여행 목록 가져오기
-    func fetchAllTravels() async throws -> [Travel] {
-        let objects = await realmManager.fetchAllTravels()
-        return objects.map { Travel(from: $0) }
+    
+    // 모든 여행 목록 조회
+    func fetchAllTravels() async -> [Travel] {
+        return await realmManager.fetchAllTravels()
     }
-
+    
     // 여행 추가
     func addTravel(
         country: String,
@@ -26,14 +25,12 @@ final class TravelRepository {
         notes: String,
         currency: String
     ) async throws {
-        let newObject = TravelObject()
-        newObject.country = country
-        newObject.departureDate = departureDate
-        newObject.returnDate = returnDate
-        newObject.notes = notes
-        newObject.currency = currency
-        
-        try await realmManager.addTravel(newObject)
+        try await realmManager.addTravel(
+            country: country,
+            departureDate: departureDate,
+            returnDate: returnDate,
+            notes: notes,
+            currency: currency)
     }
 
     // 여행 삭제
@@ -42,14 +39,3 @@ final class TravelRepository {
     }
 }
 
-// MARK: - TCA Dependency 등록
-extension DependencyValues {
-    var travelRepository: TravelRepository {
-        get { self[TravelRepositoryKey.self] }
-        set { self[TravelRepositoryKey.self] = newValue }
-    }
-}
-
-private enum TravelRepositoryKey: DependencyKey {
-    static let liveValue = TravelRepository()
-}

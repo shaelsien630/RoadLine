@@ -138,10 +138,13 @@ struct CalendarView: View {
     
     // 텍스트 색상 설정
     private func textColor(for date: Date) -> Color {
+        let calendar = Calendar.current
         if date == startDate || date == endDate {
             return Color.white
         } else if calendar.component(.weekday, from: date) == 1 {
             return Color.red
+        } else if calendar.isDate(date, inSameDayAs: Date()) { // 년-월-일 비교
+            return Color.accentColor
         }
         return Color.primary
     }

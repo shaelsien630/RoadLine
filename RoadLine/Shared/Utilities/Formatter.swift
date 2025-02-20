@@ -14,10 +14,20 @@ extension Date {
         formatter.dateFormat = format.rawValue
         return formatter.string(from: self)
     }
+    
+    func dateToWeekString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E"
+        formatter.locale = Locale(identifier:"ko_KR")
+        return formatter.string(from: self)
+    }
 }
 
 enum DateFormat: String {
     case yyyyMMdd = "yyyy년 MM월 dd일"
     case yyyyMMddDot = "yyyy.MM.dd"
     case yyyyMMddHypen = "yyyy-MM-dd"
+    case MMdd = "M/d"
+    case M = "M"
+    case d = "d"
 }

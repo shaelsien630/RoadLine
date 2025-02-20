@@ -35,7 +35,7 @@ struct AddTravel: View {
                 }
                 .padding(.vertical)
             }
-            .navigationTitle("여행 일정 만들기")
+            .navigationTitle("여행 만들기")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar { toolbarContent }
             .contentShape(Rectangle())
@@ -57,8 +57,8 @@ struct AddTravel: View {
 }
 
 // MARK: - UI Components
-private extension AddTravel {
-    // 1️⃣ 여행지 입력 UI
+extension AddTravel {
+    // 여행지 입력 UI
     var countryInputSection: some View {
         VStack(spacing: 10) {
             Text("1. 어디로 떠나시나요?")
@@ -78,7 +78,7 @@ private extension AddTravel {
         .padding(.horizontal, 24)
     }
     
-    // 2️⃣ 날짜 선택 UI
+    // 날짜 선택 UI
     var dateInputSection: some View {
         VStack(spacing: 18) {
             Text("2. 얼마나 여행하시나요?")
@@ -102,7 +102,7 @@ private extension AddTravel {
         .padding(.horizontal, 24)
     }
     
-    // 3️⃣ 여행 메모 입력 UI
+    // 여행 메모 입력 UI
     var notesInputSection: some View {
         VStack(spacing: 10) {
             Text("3. 누구와 함께하시나요?")
@@ -122,11 +122,11 @@ private extension AddTravel {
         .padding(.horizontal, 24)
     }
     
-    // 4️⃣ 툴바 (네비게이션 바 버튼)
+    // 툴바 (네비게이션 바 버튼)
     @ToolbarContentBuilder
     var toolbarContent: some ToolbarContent {
         ToolbarItem(placement: .confirmationAction) {
-            Button("저장") { saveTravel(store) }
+            Button("저장") { saveTravel() }
                 .foregroundColor(Color.accentColor)
         }
         ToolbarItem(placement: .cancellationAction) {
@@ -137,8 +137,8 @@ private extension AddTravel {
 }
 
 // MARK: - Actions
-private extension AddTravel {
-    func saveTravel(_ store: StoreOf<TravelFeature>) {
+extension AddTravel {
+    private func saveTravel() {
         if country.isEmpty {
             showAlert = .country
         } else if notes.isEmpty {

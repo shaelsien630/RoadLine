@@ -24,7 +24,7 @@ struct MainView: View {
             }
             .ignoresSafeArea(edges: .bottom)
             .onAppear {
-                store.send(.fetchAllTravels) // ✅ 앱이 실행되면 fetchAllTravels 실행
+                store.send(.fetchAllTravels) // 앱이 실행되면 fetchAllTravels 실행
             }
         }
     }

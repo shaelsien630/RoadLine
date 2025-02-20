@@ -5,13 +5,6 @@
 //  Created by 최서희 on 2/10/25.
 //
 
-//
-//  TravelCore.swift
-//  RoadLine
-//
-//  Created by 최서희 on 2/10/25.
-//
-
 import Foundation
 import ComposableArchitecture
 import RealmSwift
@@ -25,7 +18,8 @@ struct TravelFeature {
         var allTravels: [Travel] = []
         var comingTravels: [Travel] = []
         var pastTravels: [Travel] = []
-        var errorMessage: String? // 에러 메시지 추가
+        var errorMessage: String?
+        var selectedTravel: Travel? // 선택된 여행
     }
     
     enum Action {
@@ -38,6 +32,7 @@ struct TravelFeature {
         case deleteTravel(id: ObjectId)
         case deleteTravelResponse(Result<Void, Error>)
 
+        case selectTravel(Travel?) // 특정 여행 선택
         case showError(String)
     }
     
@@ -45,10 +40,12 @@ struct TravelFeature {
     
     func reduce(into state: inout State, action: Action) -> Effect<Action> {
         switch action {
+            
+        // 여행 목록 조회
         case .fetchAllTravels:
             return .run { send in
                 do {
-                    let travels = try await travelRepository.fetchAllTravels()
+                    let travels = await travelRepository.fetchAllTravels()
                     await send(.fetchAllTravelsResponse(.success(travels)))
                 } catch {
                     await send(.fetchAllTravelsResponse(.failure(error)))
@@ -59,15 +56,18 @@ struct TravelFeature {
             switch result {
             case let .success(travels):
                 state.allTravels = travels
-                state.comingTravels = travels.filter { $0.returnDate > Date() }
+                state.comingTravels = travels
+                    .filter { $0.returnDate > Date() }
                     .sorted { $0.departureDate < $1.departureDate }
-                state.pastTravels = travels.filter { $0.returnDate < Date() }
+                state.pastTravels = travels
+                    .filter { $0.returnDate < Date() }
                     .sorted { $0.departureDate > $1.departureDate }
             case .failure(let error):
                 state.errorMessage = "여행 목록을 불러오는데 실패했습니다: \(error.localizedDescription)"
             }
             return .none
             
+        // 여행 추가
         case let .addTravel(country, departureDate, returnDate, notes, currency):
             return .run { send in
                 do {
@@ -95,6 +95,7 @@ struct TravelFeature {
                 return .none
             }
             
+        // 여행 삭제
         case let .deleteTravel(id):
             return .run { send in
                 do {
@@ -115,6 +116,11 @@ struct TravelFeature {
                 state.errorMessage = "여행 삭제에 실패했습니다: \(error.localizedDescription)"
                 return .none
             }
+
+        // 특정 여행 선택
+        case let .selectTravel(travel):
+            state.selectedTravel = travel
+            return .none
 
         case let .showError(message):
             state.errorMessage = message

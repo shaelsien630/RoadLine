@@ -24,9 +24,17 @@
 		61446FA92CE3032D0047ADCD /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 61446FA72CE300340047ADCD /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		61446FAC2CE39CA80047ADCD /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446FAB2CE39CA80047ADCD /* RealmManager.swift */; };
 		61446FAE2CE39CC80047ADCD /* TravelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61446FAD2CE39CC80047ADCD /* TravelRepository.swift */; };
+		618D71282D643A58000B5A89 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D71272D643A58000B5A89 /* Schedule.swift */; };
+		618D712A2D64A264000B5A89 /* ItineraryDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D71292D64A264000B5A89 /* ItineraryDate.swift */; };
+		618D712E2D64A772000B5A89 /* ScheduleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D712D2D64A772000B5A89 /* ScheduleList.swift */; };
+		618D71302D64A799000B5A89 /* ScheduleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D712F2D64A799000B5A89 /* ScheduleMap.swift */; };
+		618D71322D659BAA000B5A89 /* AddSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D71312D659BAA000B5A89 /* AddSchedule.swift */; };
+		618D71342D659F15000B5A89 /* ScheduleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D71332D659F15000B5A89 /* ScheduleRepository.swift */; };
+		618D71362D659F71000B5A89 /* ScheduleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D71352D659F71000B5A89 /* ScheduleFeature.swift */; };
+		618D713A2D65ABD3000B5A89 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D71382D65ABD3000B5A89 /* Travel.swift */; };
+		618D713D2D670D13000B5A89 /* Dependency+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D713C2D670D13000B5A89 /* Dependency+Extensions.swift */; };
+		618D71402D6710FD000B5A89 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 618D713F2D6710FD000B5A89 /* ComposableArchitecture */; };
 		61B239382D59D19100F82C59 /* TravelFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B239372D59D19100F82C59 /* TravelFeature.swift */; };
-		61B239422D59D2D000F82C59 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B239412D59D2D000F82C59 /* TravelModel.swift */; };
-		61B239452D59D4AC00F82C59 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 61B239442D59D4AC00F82C59 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,8 +68,16 @@
 		61446FA22CE19B8E0047ADCD /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		61446FAB2CE39CA80047ADCD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		61446FAD2CE39CC80047ADCD /* TravelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelRepository.swift; sourceTree = "<group>"; };
+		618D71272D643A58000B5A89 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		618D71292D64A264000B5A89 /* ItineraryDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryDate.swift; sourceTree = "<group>"; };
+		618D712D2D64A772000B5A89 /* ScheduleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleList.swift; sourceTree = "<group>"; };
+		618D712F2D64A799000B5A89 /* ScheduleMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleMap.swift; sourceTree = "<group>"; };
+		618D71312D659BAA000B5A89 /* AddSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSchedule.swift; sourceTree = "<group>"; };
+		618D71332D659F15000B5A89 /* ScheduleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRepository.swift; sourceTree = "<group>"; };
+		618D71352D659F71000B5A89 /* ScheduleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFeature.swift; sourceTree = "<group>"; };
+		618D71382D65ABD3000B5A89 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
+		618D713C2D670D13000B5A89 /* Dependency+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dependency+Extensions.swift"; sourceTree = "<group>"; };
 		61B239372D59D19100F82C59 /* TravelFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelFeature.swift; sourceTree = "<group>"; };
-		61B239412D59D2D000F82C59 /* TravelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 		61FC77EB2CD9FB5B00A2FADD /* RoadLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61B239452D59D4AC00F82C59 /* ComposableArchitecture in Frameworks */,
+				618D71402D6710FD000B5A89 /* ComposableArchitecture in Frameworks */,
 				61446FA82CE300340047ADCD /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,7 +102,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		61446F7C2CDC78340047ADCD /* Views */ = {
+		61446F7C2CDC78340047ADCD /* View */ = {
 			isa = PBXGroup;
 			children = (
 				61446F7A2CDC78340047ADCD /* MainView.swift */,
@@ -94,7 +110,7 @@
 				61B239492D59DEB500F82C59 /* Travels */,
 				61B2394A2D59DF0100F82C59 /* Itineraries */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		61446F812CDC78340047ADCD /* RoadLine */ = {
@@ -126,6 +142,23 @@
 				61446FA22CE19B8E0047ADCD /* Formatter.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		618D71392D65ABD3000B5A89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				618D71382D65ABD3000B5A89 /* Travel.swift */,
+				618D71272D643A58000B5A89 /* Schedule.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		618D713B2D670CE7000B5A89 /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				618D713C2D670D13000B5A89 /* Dependency+Extensions.swift */,
+			);
+			path = Dependency;
 			sourceTree = "<group>";
 		};
 		61B239312D59D02400F82C59 /* Features */ = {
@@ -170,9 +203,11 @@
 		61B239362D59D17A00F82C59 /* Travel */ = {
 			isa = PBXGroup;
 			children = (
-				61B2393D2D59D25D00F82C59 /* Core */,
+				618D71392D65ABD3000B5A89 /* Model */,
 				61B239462D59D5C300F82C59 /* Data */,
-				61446F7C2CDC78340047ADCD /* Views */,
+				61B2393D2D59D25D00F82C59 /* Core */,
+				618D713B2D670CE7000B5A89 /* Dependency */,
+				61446F7C2CDC78340047ADCD /* View */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -181,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				61B239372D59D19100F82C59 /* TravelFeature.swift */,
+				618D71352D659F71000B5A89 /* ScheduleFeature.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -204,8 +240,8 @@
 		61B239462D59D5C300F82C59 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				61B239412D59D2D000F82C59 /* TravelModel.swift */,
 				61446FAD2CE39CC80047ADCD /* TravelRepository.swift */,
+				618D71332D659F15000B5A89 /* ScheduleRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -227,6 +263,10 @@
 			isa = PBXGroup;
 			children = (
 				61446F9D2CE192310047ADCD /* Itinerary.swift */,
+				618D71292D64A264000B5A89 /* ItineraryDate.swift */,
+				618D71312D659BAA000B5A89 /* AddSchedule.swift */,
+				618D712D2D64A772000B5A89 /* ScheduleList.swift */,
+				618D712F2D64A799000B5A89 /* ScheduleMap.swift */,
 			);
 			path = Itineraries;
 			sourceTree = "<group>";
@@ -266,7 +306,7 @@
 			name = RoadLine;
 			packageProductDependencies = (
 				61446FA72CE300340047ADCD /* RealmSwift */,
-				61B239442D59D4AC00F82C59 /* ComposableArchitecture */,
+				618D713F2D6710FD000B5A89 /* ComposableArchitecture */,
 			);
 			productName = RoadLine;
 			productReference = 61FC77EB2CD9FB5B00A2FADD /* RoadLine.app */;
@@ -298,7 +338,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				61446FA42CE300340047ADCD /* XCRemoteSwiftPackageReference "realm-swift" */,
-				61B239432D59D4AC00F82C59 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				618D713E2D6710FD000B5A89 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 61FC77EC2CD9FB5B00A2FADD /* Products */;
@@ -329,17 +369,25 @@
 			files = (
 				61446FA32CE19B8E0047ADCD /* Formatter.swift in Sources */,
 				61446F842CDC78340047ADCD /* ComingTravel.swift in Sources */,
+				618D71302D64A799000B5A89 /* ScheduleMap.swift in Sources */,
+				618D71362D659F71000B5A89 /* ScheduleFeature.swift in Sources */,
 				61446FAE2CE39CC80047ADCD /* TravelRepository.swift in Sources */,
 				61446F852CDC78340047ADCD /* MainView.swift in Sources */,
 				61446F932CDDBDED0047ADCD /* AddTravel.swift in Sources */,
+				618D713D2D670D13000B5A89 /* Dependency+Extensions.swift in Sources */,
+				618D712A2D64A264000B5A89 /* ItineraryDate.swift in Sources */,
 				61446F8B2CDC7EA80047ADCD /* PastTravelRow.swift in Sources */,
-				61B239422D59D2D000F82C59 /* TravelModel.swift in Sources */,
+				618D713A2D65ABD3000B5A89 /* Travel.swift in Sources */,
 				61446F992CDDCC630047ADCD /* CalendarView.swift in Sources */,
 				61446F8F2CDC8C230047ADCD /* TitleView.swift in Sources */,
 				61446F8D2CDC87C50047ADCD /* ComingTravelRow.swift in Sources */,
+				618D71342D659F15000B5A89 /* ScheduleRepository.swift in Sources */,
 				61446F862CDC78340047ADCD /* PastTravel.swift in Sources */,
 				61446F872CDC78340047ADCD /* RoadLineApp.swift in Sources */,
+				618D71322D659BAA000B5A89 /* AddSchedule.swift in Sources */,
+				618D71282D643A58000B5A89 /* Schedule.swift in Sources */,
 				61446FAC2CE39CA80047ADCD /* RealmManager.swift in Sources */,
+				618D712E2D64A772000B5A89 /* ScheduleList.swift in Sources */,
 				61B239382D59D19100F82C59 /* TravelFeature.swift in Sources */,
 				61446F9E2CE192310047ADCD /* Itinerary.swift in Sources */,
 			);
@@ -576,7 +624,7 @@
 				kind = branch;
 			};
 		};
-		61B239432D59D4AC00F82C59 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		618D713E2D6710FD000B5A89 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
@@ -592,9 +640,9 @@
 			package = 61446FA42CE300340047ADCD /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
-		61B239442D59D4AC00F82C59 /* ComposableArchitecture */ = {
+		618D713F2D6710FD000B5A89 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 61B239432D59D4AC00F82C59 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 618D713E2D6710FD000B5A89 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */

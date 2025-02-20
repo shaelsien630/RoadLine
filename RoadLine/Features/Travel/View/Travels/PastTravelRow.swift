@@ -37,7 +37,7 @@ struct PastTravelRow: View {
                 
                 // 여행 정보 영역
                 HStack {
-                    NavigationLink(destination: Itinerary()) {
+                    NavigationLink(destination: Itinerary(travel: travel)) {
                         HStack(alignment: .center, spacing: 14) {
                             Circle()
                                 .frame(width: 60, height: 60)

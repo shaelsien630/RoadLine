@@ -15,7 +15,7 @@ struct ComingTravelRow: View {
     @State private var showAlert = false
     var body: some View {
         WithViewStore(store, observe: \.comingTravels) { viewStore in
-            NavigationLink(destination: Itinerary()) {
+            NavigationLink(destination: Itinerary(travel: travel)) {
                 RoundedRectangle(cornerRadius: 12)
                     .fill(Color.primary)
                     .shadow(radius: 10)
